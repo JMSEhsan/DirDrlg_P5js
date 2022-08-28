@@ -8,7 +8,7 @@ function setup() {
   createCanvas(700, 400);
   pos = createVector(69, 101);
   dir = createVector(0, 0.1);
-    createButton("Slide").mousePressed(function(){
+    createButton("Slide: toggle TF").mousePressed(function(){
    if(bh == 0){
      bh = 1}
    else {bh *=-1}
