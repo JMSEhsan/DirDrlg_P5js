@@ -29,7 +29,7 @@ function draw() {
   stroke(102, 104, 103);
   noFill();
   strokeWeight(2);
-  rig(60, 100, 6, 50);
+  rig(60, 100, 6, 20);
   stroke(73, 24, 38);
   fill(73, 24, 38);
   rect(0, 100, width, height-320);
