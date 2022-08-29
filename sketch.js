@@ -8,16 +8,20 @@ function setup() {
   createCanvas(700, 400);
   pos = createVector(69, 101);
   dir = createVector(0, 0.1);
-    createButton("Slide: toggle TF").mousePressed(function(){
+    let bttnSld = createButton("Slide: toggle TF").mousePressed(function(){
    if(bh == 0){
-     bh = 1}
+     bh = -1}
    else {bh *=-1}
  });
       
-      let bttn1 = createButton("Rotate").mousePressed(function(){bh = 0});
-  
-      let bttn2 = createButton("Stop").mousePressed(function(){noLoop()}); 
-      let bttn3 = createButton("Resume").mousePressed(function(){loop()});
+      let bttnRot = createButton("Rotate").mousePressed(function(){bh = 0});
+      let bttnStp = createButton("Stop").mousePressed(function(){noLoop()}); 
+      let bttnRsm = createButton("Resume").mousePressed(function(){loop()});
+
+      bttnSld.parent("div-container");
+      bttnRot.parent("div-container");
+      bttnStp.parent("div-container");
+      bttnRsm.parent("div-container");
 }
 
 function draw() {
