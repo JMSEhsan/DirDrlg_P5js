@@ -88,14 +88,14 @@ function draw() {
   line(adjustedAngle() + i3, j3 + 2, adjustedAngle()+ i3, 6);
   
   if (d1 == 1){
-    i1 = i1 + .08;
+    i1 = i1 + 0.1;
     j1 = 0;
     if(i1 > 7){
       d1 = -1;
     }
   }
   else{
-    i1 = i1 - .08;
+    i1 = i1 - 0.1;
     j1= 3;
     if (i1 < 0){
       d1 = 1;
@@ -103,14 +103,14 @@ function draw() {
   }
 
   if (d2 == 1){
-    i2 = i2 + .08;
+    i2 = i2 + 0.1;
     j2 = 0;
     if(i2 > 3.5 - adjustedAngle()){
       d2 = -1;
     }
   }
   else{
-    i2 = i2 - .08;
+    i2 = i2 - 0.1;
     j2 = 3;
     if (i2 < -3.5 - adjustedAngle()){
       d2 = 1;
@@ -118,14 +118,14 @@ function draw() {
   }
 
   if (d3 == 1){
-    i3 = i3 + .08;
+    i3 = i3 + 0.1;
     j3 = 0;
     if(i3 > 3.5 - adjustedAngle()){
       d3 = -1;
     }
   }
   else{
-    i3 = i3 - .08;
+    i3 = i3 - 0.1;
     j3 = 3;
     if (i3 < -3.5 - adjustedAngle()){
       d3 = 1;
