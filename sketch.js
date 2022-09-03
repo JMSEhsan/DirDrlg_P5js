@@ -81,7 +81,7 @@ function draw() {
   rect(-2.5, -2.5, 5, 6, 1, 1, 0, 0);
   
   stroke(54, 50, 200);
-  strokeWeight(2);
+  strokeWeight(1.5);
   
   line(-3.5 + i1, j1 + 2, -3.5 + i1, 6);
   line(adjustedAngle() + i2, j2 + 2, adjustedAngle() + i2, 6);
