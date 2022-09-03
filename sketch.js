@@ -2,7 +2,16 @@ let pos;
 let dir;
 let bh = 0;
 let path = [];
-let playDirDrlng = true;
+var i1 = 0;
+var i2 = 0;
+var i3 = 0;
+var j1 = 0;
+var j2 = 0;
+var j3 = 0;
+var d1 = 1;
+var d2 = 1;
+var d3 = -1;
+//let playDirDrlng = true;
 
 function setup() {
   createCanvas(700, 400);
@@ -52,7 +61,7 @@ function draw() {
   stroke(33, 85, 49);
   fill(33, 85, 49);
   rect(0, 350, width, height);
-  
+    
   beginShape();
   noFill();
   stroke(0);
@@ -63,21 +72,80 @@ function draw() {
   endShape();
   
   stroke(238, 29, 152);
-  strokeWeight(5);
+  strokeWeight(2);
   push();
   translate(pos.x, pos.y);
-  rotate(dir.heading()+(PI/20)*bh);
-  line(0, 0, 6, 0)
+  rotate(dir.heading()+(PI/20)*bh-PI/2);
+  //line(0, 0, 6, 0)
+  fill(238, 29, 152);
+  rect(-2.5, -2.5, 5, 6, 1, 1, 0, 0);
+  
+  stroke(54, 50, 200);
+  strokeWeight(2);
+  
+  line(-3.5 + i1, j1 + 2, -3.5 + i1, 6);
+  line(adjustedAngle() + i2, j2 + 2, adjustedAngle() + i2, 6);
+  line(adjustedAngle() + i3, j3 + 2, adjustedAngle()+ i3, 6);
+  
+  if (d1 == 1){
+    i1 = i1 + .08;
+    j1 = 0;
+    if(i1 > 7){
+      d1 = -1;
+    }
+  }
+  else{
+    i1 = i1 - .08;
+    j1= 3;
+    if (i1 < 0){
+      d1 = 1;
+    }
+  }
+
+  if (d2 == 1){
+    i2 = i2 + .08;
+    j2 = 0;
+    if(i2 > 3.5 - adjustedAngle()){
+      d2 = -1;
+    }
+  }
+  else{
+    i2 = i2 - .08;
+    j2 = 3;
+    if (i2 < -3.5 - adjustedAngle()){
+      d2 = 1;
+    }
+  }
+
+  if (d3 == 1){
+    i3 = i3 + .08;
+    j3 = 0;
+    if(i3 > 3.5 - adjustedAngle()){
+      d3 = -1;
+    }
+  }
+  else{
+    i3 = i3 - .08;
+    j3 = 3;
+    if (i3 < -3.5 - adjustedAngle()){
+      d3 = 1;
+    }
+  }
+
   pop();
 }
 
-function dirdrlg (){
+function dirdrlg(){
   
   const angle = 0.001;
   dir.rotate(angle * bh);
   
   path.push(pos.copy());
   pos.add(dir);
+}
+
+function adjustedAngle(){
+  return Math.cos(3.5*PI/9)*3.5   // instead of PI/3 
 }
 
 function rig(x, y, stepwidth , height) {
